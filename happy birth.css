@@ -1,0 +1,211 @@
+body {
+  background: linear-gradient(135deg, #5002cf, #a714fc, #64ff5f);
+  font-family: 'Segoe UI', sans-serif;
+  text-align: center;
+  padding: 50px;
+}
+
+h1 {
+  display: inline-block;
+  font-size: 3em;
+  color: #01fff2;
+  animation: pulse 2s infinite;
+  text-shadow: 2px 2px 8px black;
+}
+
+.message {
+  font-size: 1.5em;
+  color: #4f109c;
+  margin-top: 20px;
+}
+
+button {
+  margin-top: 40px;
+  padding: 14px 28px;
+  font-size: 1em;
+  background-image: linear-gradient(90deg, #ff8a80, #ff4081, #e040fb);
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: transform 0.4s ease;
+}
+
+button:hover {
+  transform: scale(1.1);
+  background-image: linear-gradient(90deg, #f06292, #ba68c8, #9575cd);
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.05); opacity: 0.85; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+h1 span {
+  display: inline-block;
+  transition: transform 1s ease, color 1s ease;
+}
+
+#animateButton:focus ~ h1 span {
+  transform: translateY(-10px) rotate(10deg);
+  color: #ffeb3b;
+}
+.spark-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.spark {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: gold;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
+  animation: drift 5s linear infinite;
+}
+
+@keyframes drift {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) scale(1.5);
+    opacity: 0;
+  }
+}
+.spark {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: transparent;
+  box-shadow:
+  0 0 10px #ff4081,
+    0 0 15px #ffd740,
+    0 0 20px #64b5f6;
+  animation: drift 6s ease-in infinite;
+}
+
+@keyframes drift {
+  0% {
+    transform: translateY(0) translateX(0) scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(50vh) translateX(20px) scale(1.2);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(100vh) translateX(-20px) scale(1.5);
+    opacity: 0;
+  }
+}
+.effort-btn {
+  margin-top: 20px;
+  padding: 12px 24px;
+  background-color: #f06292;
+  color: white;
+  font-size: 1em;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
+
+.effort-btn:hover {
+  background-color: #c2185b;
+  transform: scale(1.1) rotate(-1deg);
+}
+
+.info-btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #64b5f6;
+  color: white;
+  font-size: 1em;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.info-btn:hover {
+  background-color: #1976d2;
+}
+.credits {
+  opacity: 0;
+  margin-top: 15px;
+  font-size: 1.1em;
+  color: #4a148c;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.info-btn:focus ~ .credits,
+.info-btn:hover ~ .credits {
+  opacity: 1;
+}
+.popup-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 24px;
+  background-color: #9575cd;
+  color: white;
+  font-size: 1em;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.popup-btn:hover {
+  background-color: #673ab7;
+}
+
+.popup-container {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  margin-top: 20px;
+  transition: opacity 0.5s ease, max-height 0.5s ease;
+}
+
+#showTextBox:checked ~ .popup-container {
+  opacity: 1;
+  max-height: 300px;
+}
+
+.popup-container textarea {
+  width: 80%;
+  height: 150px;
+  padding: 12px;
+  font-size: 1em;
+  border: 2px solid #9575cd;
+  border-radius: 10px;
+  resize: none;
+}
+.css-phrase {
+  font-size: 1.4em;
+  font-style: italic;
+  color: #ff4081;
+  background: linear-gradient(to right, #002fff, #00ff0d, #ff0000);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+  margin-top: 20px;
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% { letter-spacing: 2px; transform: scale(1); }
+  50% { letter-spacing: 6px; transform: scale(1.05); }
+  100% { letter-spacing: 2px; transform: scale(1); }
+}
